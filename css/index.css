@@ -1,0 +1,138 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+:root{
+    --font-size:10px;
+    --h1-font-size:calc(var(--font-size) * 3.2);
+    --welcome-font-size:calc(var(--font-size) * 6.4);
+
+    --title-col:rgb(153, 119, 74);
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    background:rgb(233, 233, 233);
+    overflow:hidden;
+}
+
+main{
+    width:100%;
+    height:100%;
+}
+
+header{
+    position: fixed;
+    width:100%;
+    padding:0.5em 0;
+    top:0;
+    left:0;
+}
+
+header h1{
+    display:inline-block;
+    margin-left:2rem;
+    font-family: 'Amatic', cursive;
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    color:var(--title-col);
+}
+
+footer{
+    position: fixed;
+    width:100%;
+    padding:1em 0;
+    bottom:0;
+    left:0;
+    display:flex;
+    justify-content: center;
+    gap:1rem;
+    background: transparent;
+}
+
+button{
+    clip-path: circle(50% at 50% 50%);
+    border-radius:50%;
+    width:2rem;
+    aspect-ratio: 1 / 1;
+    border:0;
+    transform:translate(0,4em);    
+}
+
+.button-bounce{
+    animation: button-bounce-frames .5s calc(2s + var(--d)) forwards linear;
+}
+
+.button-drop{
+    transform:translate(0,0);
+    animation: button-drop-frames 0.5s calc(var(--d)) forwards linear;
+}
+
+@keyframes button-bounce-frames {
+    0%{transform:translate(0,4em);}
+    80%{transform:translate(0,-1em);}
+    100%{transform:translate(0,0);}
+}
+
+@keyframes button-drop-frames {
+    0%{transform:translate(0,0);}
+    100%{transform:translate(0,4em);}
+}
+
+.blocker{
+    position: absolute;
+    height:2em;
+    bottom:0;
+    left:0;
+}
+
+.bg-gray{  
+    background-image: radial-gradient(rgb(31, 31, 62) 60%,rgb(66, 66, 95) 40%);
+    filter: blur(3px);
+}
+
+.bg-yellow{background: yellow;}
+
+
+/*animations*/
+.show-title{
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation:show-title-frames 1.5s 16.7s forwards linear;
+}
+
+.hide-title{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    animation:hide-title-frames 1.5s forwards linear;
+}
+
+@keyframes show-title-frames{
+    0%{clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);}
+    100%{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+}
+
+@keyframes hide-title-frames{
+    0%{clip-path: polygon(0 0,100% 0,100% 100%,0 100%);}
+    100%{clip-path:polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
+}
+
+
+
+
+.griddy{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:rgba(26, 26, 43,0.3);
+    display:grid;
+    grid-template-columns: repeat(20,5vw);
+    grid-template-rows: repeat(20,5vh);
+    z-index:50;
+    background-size:5vw 5vh;
+    background-image:
+    linear-gradient(to right, rgba(128, 128, 128, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.3) 1px, transparent 1px);
+}

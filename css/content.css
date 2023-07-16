@@ -1,0 +1,75 @@
+.content-container{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:10;
+    display:grid;
+    grid-template-columns: repeat(20,5vw);
+    grid-template-rows: repeat(20,5vh);
+}
+
+.content-title{
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    margin-top:0.25em;
+    font-family: 'Amatic', cursive;
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    color:var(--title-col);
+    display:inline-block;
+    animation:show-title-frames 1.5s forwards linear;
+    white-space: nowrap;
+}
+
+.image-clip{clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);}
+
+.children{
+    width:21vw;
+    aspect-ratio: 1/0.75;
+}
+
+.uncle{
+    width:16vw;
+    aspect-ratio: 0.75/1;
+}
+
+.family{
+    width:21vw;
+    aspect-ratio: 0.8/1;
+}
+
+.tech{
+    width:5vw;
+    aspect-ratio: 1/1;
+}
+
+.food{
+    width:24vw;
+    aspect-ratio: 2.5/1;
+}
+
+.hero{
+    width:17vw;
+    aspect-ratio: 1/0.75;
+}
+
+/*content animation */
+
+.animate-BW{animation: BW-frames 10s calc(1.5s + var(--d)) forwards linear;}
+
+.animate-col{animation: col-frames 1.5s calc(10s + var(--d)) forwards linear;}
+
+.animate-tech{animation: col-frames .5s calc(0.5s + var(--d)) forwards linear;}
+
+@keyframes BW-frames{
+    0%{clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);}
+    15%{clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+    85%{clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+    100%{clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);}
+}
+
+@keyframes col-frames{
+    0%{clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);}
+    100%{clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+}

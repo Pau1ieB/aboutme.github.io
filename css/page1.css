@@ -1,0 +1,36 @@
+.page-container{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.section-1{
+    clip-path: polygon(0 0, 30% 0, 30% 0, 0 0);
+    width:100%;
+    height:100%;
+    background:rgb(15, 15, 85);
+    animation: section-1-move .7s forwards ease-in-out;
+}
+
+.section-2{
+    clip-path: polygon(40% 100%, 100% 100%, 100% 100%, 40% 100%);
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: rgb(0, 255, 255);
+    top:0;
+    left:0;
+    animation: section-2-move .7s forwards ease-in-out;
+}
+
+
+/*section animation*/
+@keyframes section-1-move{
+    0%{clip-path: polygon(0 0, 30% 0, 30% 0, 0 0);}
+    100%{clip-path: polygon(0 0, 30% 0, 40% 100%, 0 100%);}
+}
+
+@keyframes section-2-move{
+    0%{clip-path: polygon(40% 100%, 100% 100%, 100% 100%, 40% 100%);}
+    100%{clip-path: polygon(30% 0, 100% 0, 100% 100%, 40% 100%);}
+}

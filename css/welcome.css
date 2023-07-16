@@ -1,0 +1,38 @@
+.welcome-page-container{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-page-text{
+    clip-path: polygon(0 0,0 0,0 100%,0 100%);
+    display:inline-block;
+    font-family: 'Amatic', cursive;
+    font-weight: 700;
+    font-size: var(--welcome-font-size);
+    color:var(--title-col);
+}
+
+/* welcome page animations*/
+.welcome-page-animation{animation: exit-page-frames 12s forwards linear;}
+
+.exit-page-animation{animation: exit-page-frames 8s forwards linear;}
+
+@keyframes welcome-page-frames{
+    0%{clip-path: polygon(0 0,0 0,0 100%,0 100%);}
+    7%{clip-path: polygon(0 0,45% 0,45% 100%,0 100%);}
+    12%{clip-path: polygon(0 0,45% 0,45% 100%,0 100%);}
+    40%{clip-path: polygon(0 0,100% 0,100% 100%,0 100%);}
+    80%{clip-path: polygon(0 0,100% 0,100% 100%,0 100%);}
+    100%{clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%);}  
+}
+
+@keyframes exit-page-frames{
+    0%{clip-path: polygon(0 0,0 0,0 100%,0 100%);}
+    12%{clip-path: polygon(0 0,45% 0,45% 100%,0 100%);}
+    40%{clip-path: polygon(0 0,100% 0,100% 100%,0 100%);}
+    80%{clip-path: polygon(0 0,100% 0,100% 100%,0 100%);}
+    100%{clip-path: polygon(100% 0, 100% 0, 100% 100%,100% 100%);}  
+}
